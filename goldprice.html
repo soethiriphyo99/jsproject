@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Gold Price Calculator</title>
+	<script type="text/javascript">
+		function show () {
+		var Gram=parseFloat(document.myform.gram.value);
+		var Unit_price=parseInt(document.myform.unit_price.value);
+		var	num=(Gram/16.6);
+		var Kyat=Math.floor(num);
+			document.myform.kyat.value=Kyat;
+		var Pe=Math.floor((num%1)*16);
+			document.myform.pe.value=Pe;
+		var Yway= Math.floor(((((num)%1)*16)%1)*8);
+			document.myform.yway.value=Yway;
+		var	total_yway=((Kyat*128)+(Pe*8)+(Yway));
+		var Total_price=((total_yway/128)*Unit_price);
+			document.myform.total_price.value=Total_price.toFixed(0);
+		}
+	</script>
+</head>
+<body style="background-color: #eb9b3f">
+	<center><h1 style="color:#020301 ">GRAM TO KYAT PAE YWAY</h1></center>
+	<br>
+	<br> 
+	
+	<form name="myform">
+		<div style="margin-left: 450px">
+			<table>
+				<tr>
+					<td style="color:#020301 "><b>Gram:</b></td>
+					<td><input type="number" name="gram"><br><br></td>
+				</tr>
+
+				<tr>
+					<td style="color:#020301 "><b>Price per Kyat (Current):</b></td>
+					<td><input type="number" name="unit_price"><br><br>
+					</td>
+				</tr>
+
+				<tr>
+					<td style="color:#020301 "><b>Calculate:</b></td>
+					<td><input type="button" value="Calculate" onclick="show()" style="color:#020301 "><br><br></td>
+				</tr>
+
+				<tr>
+					<td style="color:#020301 "><b>Kyat:</b></td>
+					<td><input type="number" name="kyat"><br><br></td>
+				</tr>
+
+				<tr>
+					<td style="color:#020301 "><b>Pe:</b></td>
+					<td><input type="number" name="pe"><br><br></td>
+				</tr>
+
+				<tr>
+					<td style="color:#020301 "><b>Yway:</b></td>
+					<td><input type="number" name="yway"><br><br></td>
+				</tr>
+
+				<tr>
+					<td style="color:#020301 "><b>Total Price in MMK:</b></td>
+					<td><input type="number" name="total_price"><br></td>
+				</tr>
+			
+			
+			
+			</table>
+		</div>
+	</form>
+
+</body>
+</html>

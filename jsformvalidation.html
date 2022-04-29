@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JS Form Validation</title>
+	<script type="text/javascript">
+		function check(){
+			//return false;
+			var password=document.myform.password.value;
+			var confirm_password=document.myform.confirm_password.value;
+
+			if (password==confirm_password) {
+				return true;
+
+			}else {
+				document.getElementById('error_message').innerHTML='Password and Confirm Password does not match!';
+				return false;
+			}
+
+		}
+	</script>
+</head>
+<body>
+	<h1>Registration Form</h1>
+	<form name="myform" action="register.php" method="get" onsubmit="return check()">
+		Name: <input type="text" name="name" required="required"><br>
+		Email: <input type="text" name="email" required="required"><br>
+		Password: <input type="text" name="password" required="required"><br>
+		Confirm password:<input type="password" name="confirm_password
+		" required="required"><br>
+
+		<input type="submit" value="Register" name="">
+
+		<p id="error_message"></p>
+
+
+	</form>
+
+</body>
+</html>

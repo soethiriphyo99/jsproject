@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JS DOM</title>
+	<script type="text/javascript">
+		
+		function show()
+		{
+			var myh1=document.getElementById('myh1').innerText;//innerHTML;
+			var myh1=document.getElementById('myp').innerText;//innerHTML;
+
+			console.log(myh1,myp);
+			document.getElementById('myp').innerHTML=myh1+myp;
+		}
+
+		function showclass(){
+			var myblue=document.getElementsByClassName('blue');
+			console.log(myblue[0].innerHTML);
+			myblue[0].innerHTML='This is New Blue Class';
+
+
+		}
+		function showtags(){
+			var myptags=document.getElementsByTagName('p');
+			console.log(myptags);
+			myptags[3].innerHTML=myptags[1].innerHTML+myptags[2].innerHTML;
+
+			document.getElementById('myh1').innerHTML='New JS DOM Element By ID Changed!';
+
+		}
+
+	</script>
+</head>
+<body>
+	<h1 id="myh1">JS <i> DOM </i> Header</h1>
+	<p id="p1">JS DOM is funny</p>
+
+	<p class="blue">This is blue class </p>
+	<p class="red">This is red class </p>
+	
+
+	<p id="myp"></p>
+	<button onclick="show()">clickme</button>
+	<button onclick="showclass()">Show class</button>
+	<button onclick="showtags()">Show ptags</button>
+
+</body>
+</html>

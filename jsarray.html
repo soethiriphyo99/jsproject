@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JS Array</title>
+	<script type="text/javascript">
+		var studentarray=['Mg Mg',23,'Mandalay'];
+		console.log (studentarray);
+		var studentarray_obj={name:'Mg Mg',age:23,city:'Mandalay'};
+		console.log(studentarray_obj.name);
+		console.log(studentarray_obj.name,'lives in',studentarray_obj.city);
+
+		var json_string=JSON.stringify(studentarray_obj);
+		console.log(json_string);
+		var json_string_to_obj=JSON.parse(json_string);
+		console.log(json_string_to_obj);
+
+		var myjson='{"name":"Ko Ko","age":"23","city":"Mandalay","interests":[]}';
+
+
+		var myobj=JSON.parse(myjson);
+		console.log(myobj);
+
+
+		myobj.interests.push('PHP');
+		myobj.interests.push('JS');
+
+		console.log(myobj);
+		console.log(myjson);
+
+		
+	</script>
+</head>
+<body>
+
+</body>
+</html>

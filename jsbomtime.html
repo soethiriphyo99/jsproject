@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JS BOM Time</title>
+	<script type="text/javascript">
+		function showTime(){
+			var now=new Date();
+			var current_time=now.toLocaleTimeString();
+			document.getElementById('mytime').textContent=current_time;
+		}
+
+		//setInterval('showTime()', 1000);
+
+	</script>
+</head>
+<body onload="showTime()">
+	 Current Time is:<label id="mytime"></label>
+	 <button onclick="timer=setInterval('showTime()',1000)">Show Time</button>
+	 <button onclick="clearInterval(timer)">Stop Time</button>
+
+</body>
+</html>

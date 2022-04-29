@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JS While Loop</title>
+	<script type="text/javascript">
+		var number=100;
+
+		function show(number){
+		do {
+			number=number-3;
+			document.write(number + '<br>');
+
+			// statement
+		}while(number>=50);
+
+		document.write('Exit from loop ' +number);
+		}
+
+		function check(){
+
+		 do{
+		 	var number=parseInt(prompt('Enter a number1'));
+		 	if (number%2) {
+		 		alert(number+' is ODD ');
+
+		 	}else {
+		 		alert(number+'is EVEN ');
+
+		 	}
+		 	var ans=confirm('Wanna try again?');
+
+		 }while(ans);
+		}
+
+	</script>
+</head>
+<body>
+
+	<button onclick="show(100)">Show Function</button>
+	<button onclick="check()">Check Function</button>
+
+
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>BMI Calculator</title>
+	<script type="text/javascript">
+		function show(){
+			var Weight=parseInt(document.myform.weight.value);
+			var Foot=parseInt(document.myform.foot.value);
+			var Inches=parseInt(document.myform.inches.value);
+
+			var height=(Foot*12)+Inches;
+			var num=((Weight/(height*height))*703).toFixed(3);
+
+			document.myform.bmi_res.value=num;
+			
+			console.log(num);
+
+			if(num<18.5) {
+				var result="<br>You are in the <b>Underweight</b> range";
+			}
+			else if ((num>=18.5)&&(num<=24.9)) {
+				var result="<br>You are in the <b>Healthy Weight</b> range";
+			}
+			else if ((num>=25)&&(num<=29.9)) {
+				var result="<br>You are in the <b>Overweight</b> range";
+
+			}
+			else if(num>30) {
+				var result="<br>You are in the <b>Obese</b> range";
+			}
+
+			document.getElementById("weightrng").textContent=result;
+
+			document.getElementById("p").innerHTML="BMI="+num+result+"<br>BMI weight ranges<br> Less than 18.5=Underweight<br>Between 18.5-24.9=Healthy weight<br>Between 25-29.9=Overweight <br>Over 30=Obese";
+
+		}
+		
+
+	</script>
+	
+</head>
+<body style="background-color: gray" >
+	<center><h1 style="color: #010642">BMI Calculator</h1></center>
+	<form name="myform">
+	
+		<div style="margin-left: 480px">
+
+			<b>Weight<i>(lbs)</i></b><br>
+			<input type="number" name="weight" style="color:#32446b"><br><br>
+			<b>Foot<i>(ft)</i></b><br>
+			<input type="number" name="foot" style="color: #32446b"><br><br>
+			<b>Inches<i>(inc)</i></b><br>
+			<input type="number" name="inches" style="color: #32446b"><br><br>
+
+			
+			<button type="button" onclick="show()" style="background-color:#404a59"><b>Calculate</b></button>
+			<input type="number" name="bmi_res" style="visibility: hidden;">
+
+			<label id="weightrng" style="visibility: hidden;"></label>
+			<p id="p"></p>
+		</div>
+
+		
+	
+
+
+</body>
+</html>

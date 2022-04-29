@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JS Image</title> 
+	<script type="text/javascript">
+		function big(){
+			var myimg=document.getElementById('myimg');
+			myimg.setAttribute('width','400');
+			myimg.setAttribute('height','300');
+
+		}
+
+		function normal(){
+			var myimg=document.getElementById('myimg');
+			myimg.setAttribute('width','200');
+			myimg.setAttribute('height','150');
+			change();
+
+		}
+		function change(){
+			var myimg=document.getElementById('myimg');
+			var mysrc=myimg.getAttribute('src');
+			//alert(mysrc);
+			if (mysrc=='baking1.jpg') {
+
+				myimg.setAttribute('src', 'baking2.jpg');
+
+			}else if (mysrc=='baking2.jpg') {
+				myimg.setAttribute('src','coffee1.jpg');
+
+				
+			}else {
+				myimg.setAttribute('src','baking1.jpg');
+			}
+			
+		}
+
+
+
+		setInterval('change()', 2000);
+
+	</script>
+</head>
+<body>
+		<img src="baking1.jpg" width="200" height="150" id="myimg" onmouseout="normal()" onmouseover="big()" >
+
+</body>
+</html>
